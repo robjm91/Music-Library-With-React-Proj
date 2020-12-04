@@ -7,15 +7,21 @@ const api = axios.create({
 
 //Class Component structure #3 ------------
 class App extends React.Component{ 
+
     constructor() {
+        
         super();
-        api.get("/").then(res => {
+        api.get("http://www.devcodecampmusiclibrary.com/api/music/2").then(res => {
             console.log(res.data);
         })
     }
+
    render() {
        return (
+           
+
             <h1>Music Library With React</h1>
+            //render table componenet in here
        );
    } 
 }
