@@ -1,57 +1,29 @@
 import React from "react";
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: "http://www.devcodecampmusiclibrary.com/api/music"
-})
-
-//Class Component structure #3 ------------
 class App extends React.Component{ 
+    state = {
+        music: []
+    }
 
-    constructor() {
+    componentDidMount() {
         
-        super();
-        api.get("http://www.devcodecampmusiclibrary.com/api/music/2").then(res => {
-            console.log(res.data);
+        axios.get("http://www.devcodecampmusiclibrary.com/api/music/").then(res => {
+            const music = res.data;
+            console.log(music);
+            this.setState({music});
         })
     }
 
    render() {
        return (
+           <div>
+            <h1>React Music Library!</h1>
            
-
-            <h1>Music Library With React</h1>
-            //render table componenet in here
+           </div>
        );
    } 
 }
 
 export default App;
 
-
-
-
-
-// Class component structure #2 --------------
-// class App extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-
-//         }
-//     }
-// }
- 
-//  export default App;
-
-
-// Class Component #1 ------------
-// class App extends React.Component{
-//     render() {
-//         return (
-//              <h1>Music Library With React</h1>
-//         );
-//     } 
-//  }
- 
-//  export default App;
