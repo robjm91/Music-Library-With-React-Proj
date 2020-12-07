@@ -19,7 +19,8 @@ class App extends React.Component{
        return (
            <div>
             <h1>React Music Library!</h1>
-           
+            <h2>{this.state.music.data}</h2> 
+            
            </div>
        );
    } 
